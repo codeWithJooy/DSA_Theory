@@ -1,4 +1,5 @@
 #include<iostream>
+#include <cstdlib>
 using namespace std;
 
 class Node{
@@ -116,6 +117,7 @@ int main(){
     head->pushToFront(20);
     head->pushToEnd(30);
     head->printLinkedList();
+    head->deleteFromEnd();
 
     return 0;
 }
