@@ -35,6 +35,19 @@ class LinkedList {
     console.log("List is empty");
     return;
   }
+  /* Delere Data from the End */
+  deleteFromEnd() {
+    if (this.head) {
+      let current = this.head;
+      while (current.next.next != null) {
+        current = current.next;
+      }
+      current.next = null;
+      return;
+    }
+    console.log("List is Empty");
+    return;
+  }
   printLinkedList() {
     let current = this.head;
     while (current) {
@@ -51,4 +64,5 @@ head.addAtStart(10);
 head.addAtEnd(30);
 head.addAtEnd(40);
 head.deleteFromStart();
+head.deleteFromEnd();
 head.printLinkedList();
