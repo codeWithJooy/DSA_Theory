@@ -122,7 +122,7 @@ public:
         Node *current = this->head;
         if (current == NULL)
         {
-            cout << "Element Not Present" << endl;
+            cout << "Linked List is Empty" << endl;
             return;
         }
         while (current != NULL && current->data != data)
@@ -139,6 +139,28 @@ public:
         cout << "Element with given value not found";
     }
 
+    /*Delete Data Before a Node of Linked List*/
+    void deleteBeforeNode(int data)
+    {
+        Node *current = this->head;
+        if (current == NULL)
+        {
+            cout << "Linked List is Empty" << endl;
+            return;
+        }
+        while (current != NULL && current->next->next->data != data)
+        {
+            current = current->next;
+        }
+        if (current != NULL)
+        {
+            Node *temp = current->next;
+            current->next = temp->next;
+            free(temp);
+            return;
+        }
+        cout << "Element with given value not found";
+    }
     /*Function to Print the Linked List*/
     void printLinkedList()
     {
@@ -157,8 +179,15 @@ int main()
     head->pushToFront(10);
     head->pushToFront(20);
     head->pushToEnd(30);
-    head->printLinkedList();
+    head->pushToEnd(40);
+    head->pushToEnd(50);
+    head->printLinkedList(); //20->10->30->40->50
+    cout << endl;
     head->deleteFromEnd();
+    head->printLinkedList(); //20->10->30->40
+    cout << endl;
+    head->deleteFromFront();
+    head->printLinkedList(); // 10->30->40
 
     return 0;
 }
