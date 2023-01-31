@@ -25,6 +25,16 @@ class LinkedList {
     current.next = newNode;
   }
 
+  /* Delere Data from the Start */
+  deleteFromStart() {
+    if (this.head) {
+      let temp = this.head;
+      this.head = temp.next;
+      return;
+    }
+    console.log("List is empty");
+    return;
+  }
   printLinkedList() {
     let current = this.head;
     while (current) {
@@ -35,8 +45,10 @@ class LinkedList {
 }
 
 let head = new LinkedList();
+head.deleteFromStart();
 head.addAtStart(20);
 head.addAtStart(10);
 head.addAtEnd(30);
 head.addAtEnd(40);
+head.deleteFromStart();
 head.printLinkedList();
