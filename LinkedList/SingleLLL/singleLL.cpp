@@ -183,11 +183,12 @@ int main()
     head->pushToEnd(50);
     head->printLinkedList(); //20->10->30->40->50
     cout << endl;
+    head->pushToEnd(90);
     head->deleteFromEnd();
-    head->printLinkedList(); //20->10->30->40
+    head->printLinkedList(); //20->10->30->40->90
     cout << endl;
     head->deleteFromFront();
-    head->printLinkedList(); // 10->30->40
+    head->printLinkedList(); // 10->30->40->90
 
     return 0;
 }
